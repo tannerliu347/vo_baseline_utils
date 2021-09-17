@@ -7,7 +7,7 @@ Util functions to evaluate performance on ORB-SLAM2, Stereo-DSO
 1. Run ORB-SLAM2/Examples/Stereo/stereo_kitti.cc to generate result trajectory(in KITTI format)
 2. Use KITTI official evaluate_odometry_kitti.cpp : evaluate_odometry_kitti sequence_num gt_directory gt_file result_dir result_file
 ```
-eval/KITTI/evaluate_odometry_kitti 00 ground_truth 00.txt results 00_r.txt
+eval/KITTI/evaluate_odometry_kitti 00 groundTruth 00.txt results resultTraj.txt
 ```
 This outputs traslation error (%) and rotation error (deg/m)
 
@@ -20,7 +20,7 @@ eval/EuRoc/eval_EuRoc/evaluate_ate_scale.py --verbose gt_dir/data.csv result.txt
 This outputs ATE
 
 ### Stereo-DSO + KITTI:
-1. Use calibration files from XXXXXXXXXXX
+1. Use calibration files from run/KITTI/stereo-dso/KITTI_calib
 2. Run sdso to generate result trajectory(in KITTI format):
 ```
 build/bin/dso_dataset files=KITTI_dataset_dir/sequences/XX calib=calib_file_dir preset=0 mode=1 outputfile=XX.txt
