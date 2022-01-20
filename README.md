@@ -19,6 +19,10 @@ eval/EuRoc/eval_EuRoc/evaluate_ate_scale.py --verbose gt_dir/data.csv result.txt
 ```
 This outputs ATE
 
+### ORB-SLAM2 + TartanAir:
+1. Generate full trajectory in ORB-SLAM
+2. Use eval/Tartan/tartanair_evaluator.py path_to_gt_pose path_to_est_pose
+
 ### Stereo-DSO + KITTI:
 1. Use calibration files from run/KITTI/stereo-dso/KITTI_calib
 2. Run sdso to generate result trajectory(in KITTI format):
@@ -43,3 +47,8 @@ TUM: timestamp + xyz + quaternion
 KITTI: flattened SE(3) pose matrix without bottom 0 0 0 1 row
 
 EuRoc: csv with state information in IMU frame
+
+## Quick note on different trajectory error metrics
+ATE: Associate estimated to ground truth; Align using SVD; Compute the difference between each pair
+
+RPE: Computes error between every pair of neighbor timestamps. 
